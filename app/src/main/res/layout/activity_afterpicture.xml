@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_afterphoto"
+    tools:context=".AfterPictureActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/toptext_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+
+    <ImageView
+        android:id="@+id/preview_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_guideline"
+        app:layout_constraintWidth_percent="0.45" />
+
+    <ImageView
+        android:id="@+id/qrcode_imv"
+        android:background="@drawable/movie_afterphoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/home_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/frame1_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="20sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        android:layout_margin="8dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:text="無邊框"
+        app:layout_constraintEnd_toStartOf="@+id/frame2_btn"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+
+
+
+    <Button
+        android:id="@+id/frame2_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="25sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        android:layout_margin="8dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:text="秋日"
+        app:layout_constraintEnd_toStartOf="@+id/frame3_btn"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+    <Button
+        android:id="@+id/frame3_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="25sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        android:layout_margin="8dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:text="舞台"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+    <Button
+        android:id="@+id/frame4_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="20sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        android:layout_margin="8dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:text="希臘風"
+
+        app:layout_constraintStart_toEndOf="@+id/frame3_btn"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+    <Button
+        android:id="@+id/frame5_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="25sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        android:layout_margin="8dp"
+        app:layout_constraintWidth_percent="0.08"
+        app:layout_constraintHeight_percent="0.08"
+        android:text="金邊"
+        app:layout_constraintStart_toEndOf="@+id/frame4_btn"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+
+
+    <Button
+        android:id="@+id/qrcode_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="取得照片"
+        android:textSize="25sp"
+        android:textColor="#F8E7CD"
+        android:background="@drawable/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/preview_img"
+        app:layout_constraintStart_toStartOf="@+id/preview_img"
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline"
+        android:layout_margin="5dp"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mask"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="TODO" />
+
+    //loading 進度條被button蓋住
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="@+id/qrcode_btn"/>
+
+    <Button
+        android:id="@+id/topbar_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/remind_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="請選擇邊框並領取照片"
+        android:textColor="#aaa"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/toptext_guideline"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
