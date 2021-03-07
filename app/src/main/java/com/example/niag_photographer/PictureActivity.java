@@ -31,6 +31,7 @@ public class PictureActivity extends ActivityController implements SurfaceHolder
     private SurfaceView mPreview;
     private SurfaceHolder mHolder;
     private int click_num = 0;
+    private int cameraId=1;//聲明cameraId屬性，ID为1調用前置鏡頭，0調用後置鏡頭
 
     private Camera.PictureCallback mpictureCallback=new Camera.PictureCallback(){
         @Override
@@ -127,6 +128,35 @@ public class PictureActivity extends ActivityController implements SurfaceHolder
         });
 
     }
+
+    //activity生命周期在onResume是介面應是顯示狀態
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mCamera==null){//如果此時鏡頭值仍為空
+            mCamera=getCamera();//則通過getCamera()方法開啟鏡頭
+            if(mHolder!=null){
+                setStartPreview(mCamera,mHolder);//開啟預覽介面
+            }
+        }
+    }
+    //activity暫停的時候釋放鏡頭
+    @Override
+    protected void onPause() {
+        super.onPause();
+        releaseCamera();
+    }
+    //onResume()中提到的開啟鏡頭的方法
+    private Camera getCamera(){
+        Camera camera;//聲明局部變量camera
+        try{
+            camera=Camera.open(cameraId);}//根據 cameraID 設置打開鏡頭
+        catch (Exception e){
+            camera=null;
+            e.printStackTrace(); }
+        return camera;
+    }
+
     //開啟預覽介面
     private void setStartPreview(Camera camera,SurfaceHolder holder){
         try{

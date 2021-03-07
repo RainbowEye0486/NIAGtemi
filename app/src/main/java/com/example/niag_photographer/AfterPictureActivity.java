@@ -273,7 +273,7 @@ public class AfterPictureActivity extends ActivityController {
                 frame5_btn.setVisibility(View.INVISIBLE);
                 spinner.setVisibility(View.VISIBLE);
                 String imageBase64 = encodeImage(photo);
-                sendImage(imageBase64);
+                //sendImage(imageBase64);
             }
         });
     }
@@ -294,7 +294,7 @@ public class AfterPictureActivity extends ActivityController {
 
         return base64_str;
     }
-
+/*
     private void sendImage(final String data){
         new Thread(new Runnable() {
             @Override
@@ -322,7 +322,7 @@ public class AfterPictureActivity extends ActivityController {
             }
         }).start();
     }
-
+*/
     // 顯示QRcode
     private void showQRcode(final String rt_url){
         runOnUiThread(new Runnable() {
@@ -377,8 +377,9 @@ public class AfterPictureActivity extends ActivityController {
         startActivity(intent);
     }
 
-    @Override
+    //@Override
     public void onDetectionStateChanged(int state) {
+        /*
         Log.d(TAG, "onDetectionStateChanged: state ="+ state);
         switch (state){
             case DETECTED:
@@ -387,8 +388,11 @@ public class AfterPictureActivity extends ActivityController {
                 Toast.makeText(AfterPictureActivity.this, "idle", Toast.LENGTH_SHORT).show();
                 toNextActivity();
                 break;
+
         }
 
+
+         */
     }
 
     private void cancelTimer() {
